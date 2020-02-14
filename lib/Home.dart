@@ -28,7 +28,8 @@ class _HomeState extends State<Home> {
           onTap: (){
     print("Container clicked");
     },
-        child: new Card(  
+            child: new Card(
+
           clipBehavior: Clip.antiAlias,
            shape: RoundedRectangleBorder(
              borderRadius: BorderRadius.circular(8.0)
@@ -36,11 +37,32 @@ class _HomeState extends State<Home> {
 
             color: Colors.teal[300],
            child: new Column(
+
              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
 
-                new Text("Gratitude beads"),
+              children: [
+                new Stack(
+
+                    children: <Widget>[
+                      new Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT4gEuYfFSLJY2TuYU2MpcKu-Y34gjsjOhIoONBA7lHH-tVnBw1'),
+                       new Column(
+                         mainAxisAlignment: MainAxisAlignment.center,
+                         crossAxisAlignment: CrossAxisAlignment.center,
+                         children: <Widget>[
+                         new  Text("Gratitude beads"),
+                         ],
+                       )
+
+
+
+                    ]
+                ),
+
+
+
+
+
               ]
           ),
         )
@@ -58,7 +80,19 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  new Text("Gratitude Journal")
+                    new Stack(
+                     children: <Widget>[
+
+                           new Image.network('https://wellbeingcoaches.com/wp-content/uploads/2017/12/3.GratitudeJournal.jpg'),
+
+
+
+                       new Text("Gratitude Journal")
+                     ],
+                   ),
+
+
+
                 ],
               ),
             ),
