@@ -30,7 +30,9 @@ class _HomeState extends State<Home> {
           new InkWell(
                     onTap: (){
               print("Container clicked");
-            Navigator.of(context).push(_createRoute());
+            Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+              return GratitudeBeads();
+            }));
               },
             child: new Card(
 
