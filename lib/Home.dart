@@ -1,5 +1,8 @@
+
+
 import 'package:flutter/material.dart';
 
+import 'package:gratitude_journal/gratitude_beads.dart';
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -25,37 +28,34 @@ class _HomeState extends State<Home> {
         children: <Widget>[
 
           new InkWell(
-          onTap: (){
-    print("Container clicked");
-    },
+                    onTap: (){
+              print("Container clicked");
+            Navigator.of(context).push(_createRoute());
+              },
             child: new Card(
 
-          clipBehavior: Clip.antiAlias,
-           shape: RoundedRectangleBorder(
-             borderRadius: BorderRadius.circular(8.0)
-           ),
+              clipBehavior: Clip.antiAlias,
+               shape: RoundedRectangleBorder(
+                 borderRadius: BorderRadius.circular(8.0)
+               ),
 
-            color: Colors.teal[300],
-           child: new Column(
+              color: Colors.teal[300],
+                  child: new Column(
+                       mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          new Stack(
+                              children: <Widget>[
+                                new Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT4gEuYfFSLJY2TuYU2MpcKu-Y34gjsjOhIoONBA7lHH-tVnBw1'),
+                                 new Center(
 
-             mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+                                    child:
+                                     Text(
+                                           "Gratitude beads",
 
-              children: [
-                new Stack(
-
-                    children: <Widget>[
-                      new Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT4gEuYfFSLJY2TuYU2MpcKu-Y34gjsjOhIoONBA7lHH-tVnBw1'),
-                       new Column(
-                         mainAxisAlignment: MainAxisAlignment.center,
-                         crossAxisAlignment: CrossAxisAlignment.center,
-                         children: <Widget>[
-                         new  Text("Gratitude beads"),
-                         ],
-                       )
-
-
-
+                                       textAlign: TextAlign.center,
+                                           ),
+                                    )
                     ]
                 ),
 
@@ -103,4 +103,21 @@ class _HomeState extends State<Home> {
       )
     );
   }
+}
+
+
+Route _createRoute(){
+  return PageRouteBuilder(pageBuilder: (context, animation, secondaryAnimation)=>GratitudeBeads(),
+  transitionsBuilder: (context, animation, secondaryAnimation, child){
+    var begin= Offset(0.0,1.0);
+    var end = Offset.zero;
+    var curve =Curves.ease;
+
+    var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+    return SlideTransition(position: animation.drive(tween),child: child,);
+  },
+
+  );
+  
 }
