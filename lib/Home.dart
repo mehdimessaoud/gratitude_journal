@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:gratitude_journal/gratitude_beads.dart';
+
+import 'gratitude_journal.dart';
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -30,7 +32,9 @@ class _HomeState extends State<Home> {
           new InkWell(
                     onTap: (){
               print("Container clicked");
-            Navigator.of(context).push(_createRoute());
+            Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+              return GratitudeBeads();
+            }));
               },
             child: new Card(
 
@@ -69,7 +73,11 @@ class _HomeState extends State<Home> {
     ),
 
           InkWell(
-            onTap: (){},
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+                return GratitudeJournal();
+              }));
+            },
             child: new Card(
               color: Colors.teal[300],
               clipBehavior: Clip.antiAlias,
