@@ -91,7 +91,7 @@ class _HomeState extends State<Home> {
                     new Stack(
                      children: <Widget>[
 
-                           new Image.network('https://wellbeingcoaches.com/wp-content/uploads/2017/12/3.GratitudeJournal.jpg'),
+                           new Image.network(),
 
 
 
