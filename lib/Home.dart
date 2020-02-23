@@ -91,7 +91,7 @@ class _HomeState extends State<Home> {
                     new Stack(
                      children: <Widget>[
 
-                           new Image.network(),
+                           new Image.asset('assets/onyxr5.jpg'),
 
 
 

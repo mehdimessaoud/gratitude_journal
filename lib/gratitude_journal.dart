@@ -16,6 +16,24 @@ class _GratitudeJournalState extends State<GratitudeJournal> {
         centerTitle: true,
         elevation: 0,
       ),
+
+      body: Container(
+
+        child: new Row(
+          children: <Widget>[
+            new Flexible(
+              child: new TextField(
+                decoration: const InputDecoration(hintText: "what are you grateful for"),
+                style: Theme.of(context).textTheme.body1,
+              ),
+
+            ),
+            new FloatingActionButton(
+                child: Icon(Icons.add),
+                onPressed: null),
+          ],
+        ),
+      ),
     );
   }
 }
